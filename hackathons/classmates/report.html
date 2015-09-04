@@ -46,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Thu Sep 03 2015 14:29:58 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Thu Sep 03 2015 19:40:32 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -529,20 +529,65 @@ on the &quot;self-introduction&quot; data. Out of these questions, our team chos
 the following:</p>
 <h1 id="who-is-not-a-computer-science-major">Who is not a Computer Science major?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+
+<span class="keyword">var</span> csComments = _.reject(comments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;computer science&quot;</span>) || _.includes(n.toLowerCase(), <span class="string">&quot;cs&quot;</span>)
+});
+
+<span class="keyword">return</span> _.map(csComments, <span class="keyword">function</span>(comment) {
+    <span class="keyword">var</span> names = comment.split(<span class="string">&apos;\r\n&apos;</span>)[<span class="number">0</span>]
+    <span class="keyword">return</span> names.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
+});
 </pre></p>
-<h1 id="how-many-people-responded-before-the-first-class">How many people responded before the first class?</h1>
+<p> John Cronk, Sushant Mittal, Sanketh S Shetty, Brian McKean,Kari Santos are all not Computer Science majors.</p>
+<h1 id="how-many-people-responded-before-the-first-day-of-class-august-24th">How many people responded before the first day of class (August 24th)?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> dates = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+
+<span class="keyword">var</span> commitTimes = _.map(dates, <span class="keyword">function</span>(n) {
+    <span class="keyword">var</span> date = n.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>]
+    <span class="keyword">return</span> date.split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
+});
+
+<span class="keyword">return</span> (_.filter(commitTimes, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> n&lt;<span class="number">24</span>
+})).length
+
 </pre></p>
+<p>5 people responded before the first class.</p>
 <h1 id="how-many-people-are-applied-math-majors">How many people are Applied Math majors?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+
+<span class="keyword">var</span> appm = _.filter(comments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;applied math&quot;</span>) || _.includes(n.toLowerCase(), <span class="string">&quot;appm&quot;</span>)
+});
+
+<span class="keyword">return</span> _.map(appm, <span class="keyword">function</span>(comment) {
+    <span class="keyword">var</span> names = comment.split(<span class="string">&apos;\r\n&apos;</span>)[<span class="number">0</span>]
+    <span class="keyword">return</span> names.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
+});
 </pre></p>
-<h1 id="how-many-people-said-food-in-their-favorite-foods">How many people said &quot;food&quot; in their favorite foods?</h1>
+<p> William Farmer, Denis Kazakov, Nicole Woytarowicz are Applied Math majors.</p>
+<h1 id="how-many-people-responded-after-class-began-on-the-24th">How many people responded after class began on the 24th?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> dates = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+
+<span class="keyword">var</span> dateFilter = _.filter(dates, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;2015-08-24&quot;</span>)
+});
+
+<span class="keyword">var</span> commitTimes = _.map(dateFilter, <span class="keyword">function</span>(n) {
+    <span class="keyword">var</span> date = n.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>]
+    <span class="keyword">return</span> date.split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
+});
+
+<span class="keyword">return</span> (_.filter(commitTimes, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> n&gt;<span class="number">16</span>
+})).length 
 </pre></p>
+<p>13 people responded after the beginning of the first class.</p>
 
                     
                     </section>
