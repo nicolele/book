@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Thu Sep 03 2015 14:29:58 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Thu Sep 03 2015 19:40:32 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -525,7 +525,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="analysis">Analysis</h1>
+                        <h2 id="analysis">Analysis</h2>
 <p>After completing the warmup exercises, your task is to do four more slightly
 more challenges analyses.</p>
 <h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
@@ -586,17 +586,30 @@ more challenges analyses.</p>
 
 </pre></p>
 <p>The answer is Java.</p>
-<h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
+<h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as &apos;kjblakemore&apos;?</h2>
 <p><pre>
 <span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
-<span class="keyword">var</span> kjblakemore = _.pluck((_.pluck(data.comments, <span class="string">&apos;user&apos;</span>)), <span class="string">&apos;login&apos;</span>)
 
-console.log(kjblakemore)
+<span class="keyword">var</span> kjComment = _.filter(comments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
+});
 
-<span class="keyword">return</span> <span class="string">&quot;nothing&quot;</span>
-</pre><div class="console"><pre>console&gt; [&quot;willzfarmer&quot;,&quot;twagar95&quot;,&quot;Malaokia&quot;,&quot;fadhilfath&quot;,&quot;hswitte&quot;,&quot;ZachLamb&quot;,&quot;zhya215&quot;,&quot;jocr1627&quot;,&quot;drewdinger&quot;,&quot;94kazakov&quot;,&quot;nicolele&quot;,&quot;satchelspencer&quot;,&quot;tiro6090&quot;,&quot;Linenfelser&quot;,&quot;KevinKGifford&quot;,&quot;calebhsu&quot;,&quot;sumi6109&quot;,&quot;pail4944&quot;,&quot;DomoYeti&quot;,&quot;boanding&quot;,&quot;kjblakemore&quot;,&quot;SankethSukumarShetty&quot;,&quot;AndreyShprengel&quot;,&quot;co-bri&quot;,&quot;karisantos&quot;,&quot;anbe6083&quot;]
-</pre></div></p>
-<p>Their names are nothing.</p>
+<span class="keyword">var</span> otherComments = _.reject(comments, <span class="keyword">function</span>(n) {
+<span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
+});
+
+<span class="keyword">var</span> kjFood = _.map(kjComment, <span class="keyword">function</span>(comment) {
+    <span class="keyword">var</span> food = _.last(comment.split(<span class="string">&apos;\r\n&apos;</span>))
+    <span class="keyword">return</span> food.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
+});
+
+<span class="keyword">var</span> sameFood = _.filter(otherComments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
+});
+
+<span class="keyword">return</span> sameFood.length
+</pre></p>
+<p>There are 0 people who like the same food as kjblakemore.</p>
 
                     
                     </section>

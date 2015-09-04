@@ -1,4 +1,4 @@
-# Analysis
+## Analysis
 
 {% import './data.html' as data %}
 
@@ -72,15 +72,29 @@ else {
 
 The answer is {{result}}.
 
-## Who like the same food as `kjblakemore`?
+## Who like the same food as 'kjblakemore'?
 
 {% lodash %}
 var comments = _.pluck(data.comments, 'body')
-var kjblakemore = _.pluck((_.pluck(data.comments, 'user')), 'login')
 
-console.log(kjblakemore)
+var kjComment = _.filter(comments, function(n) {
+    return _.includes(n, "Karen Blakemore")
+});
 
-return "nothing"
+var otherComments = _.reject(comments, function(n) {
+return _.includes(n, "Karen Blakemore")
+});
+
+var kjFood = _.map(kjComment, function(comment) {
+    var food = _.last(comment.split('\r\n'))
+    return food.split(':')[1]
+});
+
+var sameFood = _.filter(otherComments, function(n) {
+    return _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
+});
+
+return sameFood.length
 {% endlodash %}
 
-Their names are {{result}}.
+There are {{result}} people who like the same food as kjblakemore.
