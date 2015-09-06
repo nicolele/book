@@ -74,6 +74,7 @@ var date = n.split('T')[1]
 return date.split(':')[0]
 });
 
+
 return (_.filter(commitTimes, function(n) {
 return n>16
 })).length 

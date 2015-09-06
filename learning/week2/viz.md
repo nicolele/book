@@ -17,32 +17,28 @@ including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
 
-(write your answer based on the statistics you can find online)
+According to forbes.com, Tableau had 4,400 customers by the end of 2010 and up to 26,000 by the end of 2014, with an estimate of over 60,000 customers projected for the end of 2015. 
 
-# (Question 1)
+# Who is not a Computer Science major?
 
-![screenshot](screenshot.png)
+![screenshot](csmajors.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+All the computer science majors in the class are shown in yellow circles and all the people who are not computer science majors are shown inside the other circles along with their majors.
 
-# (Question 2)
+# How many people responded before the first day of class (August 24th)?
 
-![screenshot](screenshot.png)
+![screenshot](responses.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The bottom bar shows how many people responded before the first day of class and the top bar shows how many people did not.
 
-# (Question 3)
+# How many people are Applied Math majors?
 
-![screenshot](screenshot.png)
+![screenshot](appm.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The APPM majors are shown on the left in red and all other majors are shown on the right in blue.
 
-# (Question 4)
+# How many people responded after class began on the 24th?
 
-![screenshot](screenshot.png)
+![screenshot](times.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+A chart showing the hour people responded after class began on the x-axis and the number of people who responded at that time on the y-axis.
