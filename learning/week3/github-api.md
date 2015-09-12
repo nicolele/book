@@ -53,6 +53,7 @@ The github account names are {{ result }}.
 
 Now it's your turn to answer the following questions using the real data.
 
+## How many issues have been created to date in our class's forum repository?
 
 {% githubapi %}
 https://api.github.com/repos/bigdatahci2015/forum/issues
