@@ -53,49 +53,64 @@ The github account names are {{ result }}.
 
 Now it's your turn to answer the following questions using the real data.
 
-### How many issues have been created to date in our class's forum repository?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/repos/bigdatahci2015/forum/issues
 {% endgithubapi %}
 
-{% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
-{% endlodash %}
+Total of {{data.length}} was created.
 
 ### What are the titles of these issues?
 
-(answer)
+{% lodash %}
+// add lodash code to process the data and generate the answer
+return _.pluck(data, "title")
+{% endlodash %}
+
+Titles are {{result}}.
 
 ### How many repository have been created to date for our class?
 
 Our class's Github organization is [bigdatahci2015](https://github.com/bigdatahci2015/).
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/orgs/bigdatahci2015/repos
 {% endgithubapi %}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return data 
 {% endlodash %}
+
+We have {{result.length}} repositories in our class. 
 
 ### What are the fork counts of our class's repositories?
 
-(answer)
+{% lodash %}
+var results = _.map(data, function(repo) {
+return {repository: repo.name, count: repo.forks_count}
+});
+
+return results
+{% endlodash %}
+
+Fork counts of repos: {{result | json }}
 
 ### How many public repositories does the user `doubleshow` have?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/users/doubleshow
 {% endgithubapi %}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return data.public_repos
 {% endlodash %}
+
+There are {{result}} public repos for doubleshow
 
 ### How many public gists does the user `doubleshow` have?
 
-(answer)
+{% lodash %}
+return data.public_gists
+{% endlodash %}
+
+There are {{result}} public gists for doubleshow
