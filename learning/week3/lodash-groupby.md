@@ -140,15 +140,16 @@ Who is the first person in each age group?
 {"1":"Peter Pan","3":"Kelly Fan","4":"Mary Smith","5":"John Smith"}
 
 {% solution %}
+var ageGroups = _.groupBy(data, function(d){
+        return Math.floor(d.age / 10)   
+});
+var result = _.mapValues(ageGroups, function(d){
+    return (_.first(d)).name
+});
 
-var result = 'not done'
 return result
 
 {% endlodashexercise %}
-
-
-
-
 
 
 {% lodashexercise %}
@@ -211,9 +212,9 @@ Group people by their last name
 }
 
 {% solution %}
-
-var result = 'not done'
-return result
+return _.groupBy(data, function(d) {
+  return d.name.split(' ')[1]
+});
 
 {% endlodashexercise %}
 
@@ -248,8 +249,15 @@ How many people are in each last-name group?
 
 {% solution %}
 
-var result = 'not done'
+var lastNames = _.groupBy(data, function(d) {
+  return d.name.split(' ')[1]
+});
+var result = _.mapValues(lastNames, function(d){
+    return d.length
+});
+
 return result
+
 
 {% endlodashexercise %}
 
@@ -286,8 +294,15 @@ Who is the first person in each last-name group?
 
 {% solution %}
 
-var result = 'not done'
+var lastNames = _.groupBy(data, function(d) {
+  return d.name.split(' ')[1]
+});
+var result = _.mapValues(lastNames, function(d){
+    return (_.first(d)).name
+});
+
 return result
+
 
 {% endlodashexercise %}
 
@@ -633,11 +648,13 @@ Group people by their favorites.
 }
 
 {% solution %}
-
-// hint: first, apply _.groupBy to the name-favovrite pairs computed earlier
-var result = 'not done'
-return result
-
+var favoritePairs = _.flatten(_.map(data, function(d){
+  return _.map(d.favorites, function(f){
+    return {name: d.name, favorite: f}})
+}));
+return _.groupBy(favoritePairs, function(d) {
+  return d.favorite
+});
 {% endlodashexercise %}
 
 
@@ -701,11 +718,18 @@ What are the names of the people in these 'favorite' groups?
 }
 
 {% solution %}
+var favoritePairs = _.flatten(_.map(data, function(d){
+  return _.map(d.favorites, function(f){
+    return {name: d.name, favorite: f}})
+}));
+var favoriteGroups = _.groupBy(favoritePairs, function(d) {
+  return d.favorite
+});
+var result = _.mapValues(favoriteGroups, function(d){
+    return _.pluck(d, 'name')
+});
 
-
-var result = 'not done'
 return result
-
 {% endlodashexercise %}
 
 
@@ -740,8 +764,17 @@ What are the sizes of these 'favorite' groups?
 }
 
 {% solution %}
+var favoritePairs = _.flatten(_.map(data, function(d){
+  return _.map(d.favorites, function(f){
+    return {name: d.name, favorite: f}})
+}));
+var favoriteGroups = _.groupBy(favoritePairs, function(d) {
+  return d.favorite
+});
+var result = _.mapValues(favoriteGroups, function(d){
+    return (_.pluck(d, 'name')).length
+});
 
-var result = 'not done'
 return result
 
 {% endlodashexercise %}
