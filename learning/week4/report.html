@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>FCQ Report | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,8 +37,10 @@
         
     
     
+    <link rel="next" href="../../learning/week4/viz.html" />
     
-    <link rel="prev" href="../../hackathons/fcq/warmup.html" />
+    
+    <link rel="prev" href="../../learning/week4/index.html" />
     
 
         <!-- head:end -->
@@ -46,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.2" data-basepath="../.." data-revision="Sun Sep 20 2015 16:27:51 GMT-0600 (MDT)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 16:27:51 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -342,7 +344,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="learning/week4/report.html">
+        <li class="chapter active" data-level="1.5.1" data-path="learning/week4/report.html">
             
                 
                     <a href="../../learning/week4/report.html">
@@ -561,7 +563,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3.2" data-path="hackathons/fcq/report.html">
+        <li class="chapter " data-level="2.3.2" data-path="hackathons/fcq/report.html">
             
                 
                     <a href="../../hackathons/fcq/report.html">
@@ -700,9 +702,9 @@ the following questions. Each member on our team is reponsible for one question.
 <p><pre>
 <span class="keyword">var</span> subjects = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
 <span class="keyword">var</span> departments = _.pick(_.mapValues(subjects, <span class="keyword">function</span>(d){
-    <span class="keyword">return</span> (_.sum(_.pluck(d, <span class="string">&quot;AVG_GRD&quot;</span>)))/(d.length)
+<span class="keyword">return</span> (_.sum(_.pluck(d, <span class="string">&quot;AVG_GRD&quot;</span>)))/(d.length)
 }), <span class="keyword">function</span>(x){
-    <span class="keyword">return</span> x &gt; <span class="number">0</span>
+<span class="keyword">return</span> x &gt; <span class="number">0</span>
 })
 
 <span class="keyword">var</span> worst = _.min(departments)
@@ -717,15 +719,15 @@ the following questions. Each member on our team is reponsible for one question.
 <h1 id="which-classes-with-specific-professors-damaged-the-most-students-sort-by-d-df-f-wdraw-rating-by-denis-kazakov">Which classes(with specific professors) damaged the most students (sort by:D + DF + F + WDRAW rating)? by Denis Kazakov</h1>
 <p><pre>
 <span class="keyword">var</span> clean = _.filter(data, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.PCT.D != <span class="string">&quot;&quot;</span>
+<span class="keyword">return</span> n.PCT.D != <span class="string">&quot;&quot;</span>
 })
 
 <span class="keyword">var</span> map = _.map(clean, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> {course: n.CourseTitle, ratio: n.PCT.C + n.PCT.D + n.PCT.F, name: _.pluck(n.Instructors, <span class="string">&quot;name&quot;</span>)}
+<span class="keyword">return</span> {course: n.CourseTitle, ratio: n.PCT.C + n.PCT.D + n.PCT.F, name: _.pluck(n.Instructors, <span class="string">&quot;name&quot;</span>)}
 })
 
 <span class="keyword">return</span> _.sortBy(map, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.ratio
+<span class="keyword">return</span> n.ratio
 }).reverse()
 </pre></p>
 <table>
@@ -11105,8 +11107,10 @@ the following questions. Each member on our team is reponsible for one question.
         </div>
 
         
-        <a href="../../hackathons/fcq/warmup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week4/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 4"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../learning/week4/viz.html" class="navigation navigation-next " aria-label="Next page: FCQ Viz"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
