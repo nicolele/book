@@ -19,33 +19,29 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# What department has the lowest average GPA? by Nicole Woytarowicz
 
-![screenshot](screenshot.png)
+![screenshot](worst.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+A scatter plot of GPAs and their departments with the lowest average departmental (Business Administration) GPA highlighted.
 
-# (Question 2)
+# Which classes(with specific professors) damaged the most students (sort by:D + DF + F + WDRAW rating)? by Denis Kazakov
 
-![screenshot](screenshot.png)
+![screenshot](classes.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The classes with the most damaged students are shown with the course name and professor, with the ones with the highest rating shown in the biggest and darkest circles.
 
-# (Question 3)
+# Which classes have the maximum Hours spent (16+) per week? by Parker Illig
 
-![screenshot](screenshot.png)
+![screenshot](max.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The courses with 16+ hours per week are labeled inside the bars and the department they belong to is on the x-axis.
 
-# (Question 4)
+# What should my major be if I want a high GPA? by Caleb Hsu
 
-![screenshot](screenshot.png)
+![screenshot](best.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+A scatter plot of GPAs and their departments with the highest average departmental (Museum) GPA highlighted.
 
 # (Question 5)
 

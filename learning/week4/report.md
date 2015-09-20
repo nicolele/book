@@ -50,7 +50,7 @@ return n.ratio
 {% endfor %}
 </table>
 
-# Which classes have the maximum Hours spent (13-15) per week? by Parker Illig
+# Which classes have the maximum Hours spent (16+) per week? by Parker Illig
 
 {% lodash %}
 var result = _.groupBy(data, function(d){
@@ -61,7 +61,7 @@ return combine
 })
 var classes = _.mapValues(result, function(d){
 var wk = _.first(_.pluck(d, 'Workload.Hrs_Wk'))
-return _.includes(wk, '13-15')
+return _.includes(wk, '16+')
 })
 return _.pick(classes, function(x){
 return x==true

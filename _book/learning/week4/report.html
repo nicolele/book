@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 16:27:51 GMT-0600 (MDT)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 17:54:00 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -10760,7 +10760,7 @@ the following questions. Each member on our team is reponsible for one question.
 
 </table>
 
-<h1 id="which-classes-have-the-maximum-hours-spent-13-15-per-week-by-parker-illig">Which classes have the maximum Hours spent (13-15) per week? by Parker Illig</h1>
+<h1 id="which-classes-have-the-maximum-hours-spent-16-per-week-by-parker-illig">Which classes have the maximum Hours spent (16+) per week? by Parker Illig</h1>
 <p><pre>
 <span class="keyword">var</span> result = _.groupBy(data, <span class="keyword">function</span>(d){
 <span class="keyword">var</span> dept = d.Subject
@@ -10770,7 +10770,7 @@ the following questions. Each member on our team is reponsible for one question.
 })
 <span class="keyword">var</span> classes = _.mapValues(result, <span class="keyword">function</span>(d){
 <span class="keyword">var</span> wk = _.first(_.pluck(d, <span class="string">&apos;Workload.Hrs_Wk&apos;</span>))
-<span class="keyword">return</span> _.includes(wk, <span class="string">&apos;13-15&apos;</span>)
+<span class="keyword">return</span> _.includes(wk, <span class="string">&apos;16+&apos;</span>)
 })
 <span class="keyword">return</span> _.pick(classes, <span class="keyword">function</span>(x){
 <span class="keyword">return</span> x==<span class="keyword">true</span>
@@ -10780,299 +10780,67 @@ the following questions. Each member on our team is reponsible for one question.
 <table>
 
 <tr>
-<td>IAFS 4930</td>
+<td>ASEN 4018</td>
 </tr>
 
 <tr>
-<td>PHYS 5250</td>
+<td>TLEN 5460</td>
 </tr>
 
 <tr>
-<td>PHYS 7310</td>
+<td>LAWS 7309</td>
 </tr>
 
 <tr>
-<td>THTR 3035</td>
+<td>PMUS 1556</td>
 </tr>
 
 <tr>
-<td>THTR 4061</td>
+<td>PMUS 1596</td>
 </tr>
 
 <tr>
-<td>FNCE 4050</td>
+<td>PMUS 1636</td>
 </tr>
 
 <tr>
-<td>EDUC 8230</td>
+<td>PMUS 1666</td>
 </tr>
 
 <tr>
-<td>EDUC 8250</td>
+<td>PMUS 1696</td>
 </tr>
 
 <tr>
-<td>ASEN 1400</td>
+<td>ENVD 1102</td>
 </tr>
 
 <tr>
-<td>ASEN 2002</td>
+<td>ENVD 2130</td>
 </tr>
 
 <tr>
-<td>ASEN 5070</td>
+<td>ARTS 3085</td>
 </tr>
 
 <tr>
-<td>CHEN 5390</td>
+<td>GEOL 2700</td>
 </tr>
 
 <tr>
-<td>CSCI 4576</td>
+<td>ASEN 4028</td>
 </tr>
 
 <tr>
-<td>CSCI 5352</td>
+<td>ECEN 5606</td>
 </tr>
 
 <tr>
-<td>CVEN 5111</td>
+<td>TLEN 5462</td>
 </tr>
 
 <tr>
-<td>CVEN 5313</td>
-</tr>
-
-<tr>
-<td>CVEN 5830</td>
-</tr>
-
-<tr>
-<td>ECEN 3000</td>
-</tr>
-
-<tr>
-<td>ECEN 4593</td>
-</tr>
-
-<tr>
-<td>ECEN 4827</td>
-</tr>
-
-<tr>
-<td>ECEN 5448</td>
-</tr>
-
-<tr>
-<td>MCEN 3030</td>
-</tr>
-
-<tr>
-<td>MCEN 4045</td>
-</tr>
-
-<tr>
-<td>MCEN 5228</td>
-</tr>
-
-<tr>
-<td>MUSM 5011</td>
-</tr>
-
-<tr>
-<td>JOUR 3503</td>
-</tr>
-
-<tr>
-<td>JOUR 4503</td>
-</tr>
-
-<tr>
-<td>JOUR 4624</td>
-</tr>
-
-<tr>
-<td>LAWS 6079</td>
-</tr>
-
-<tr>
-<td>LAWS 6420</td>
-</tr>
-
-<tr>
-<td>EMUS 1287</td>
-</tr>
-
-<tr>
-<td>PMUS 1516</td>
-</tr>
-
-<tr>
-<td>PMUS 1626</td>
-</tr>
-
-<tr>
-<td>PMUS 1646</td>
-</tr>
-
-<tr>
-<td>PMUS 1676</td>
-</tr>
-
-<tr>
-<td>PMUS 1706</td>
-</tr>
-
-<tr>
-<td>PMUS 4517</td>
-</tr>
-
-<tr>
-<td>ENVD 1052</td>
-</tr>
-
-<tr>
-<td>ARTS 2095</td>
-</tr>
-
-<tr>
-<td>ARTS 4117</td>
-</tr>
-
-<tr>
-<td>CHEM 4181</td>
-</tr>
-
-<tr>
-<td>CHEM 5781</td>
-</tr>
-
-<tr>
-<td>CHEM 6901</td>
-</tr>
-
-<tr>
-<td>ECON 8219</td>
-</tr>
-
-<tr>
-<td>ENGL 7019</td>
-</tr>
-
-<tr>
-<td>FILM 2610</td>
-</tr>
-
-<tr>
-<td>FILM 4500</td>
-</tr>
-
-<tr>
-<td>FILM 4604</td>
-</tr>
-
-<tr>
-<td>GEOG 5632</td>
-</tr>
-
-<tr>
-<td>IAFS 4810</td>
-</tr>
-
-<tr>
-<td>MCDB 4111</td>
-</tr>
-
-<tr>
-<td>PSCI 4008</td>
-</tr>
-
-<tr>
-<td>SPAN 4650</td>
-</tr>
-
-<tr>
-<td>WMST 6090</td>
-</tr>
-
-<tr>
-<td>MBAX 6540</td>
-</tr>
-
-<tr>
-<td>MBAX 6620</td>
-</tr>
-
-<tr>
-<td>ASEN 6037</td>
-</tr>
-
-<tr>
-<td>ASEN 6080</td>
-</tr>
-
-<tr>
-<td>CHEN 3130</td>
-</tr>
-
-<tr>
-<td>CHEN 4530</td>
-</tr>
-
-<tr>
-<td>AREN 4010</td>
-</tr>
-
-<tr>
-<td>AREN 4317</td>
-</tr>
-
-<tr>
-<td>CVEN 4434</td>
-</tr>
-
-<tr>
-<td>ECEN 4620</td>
-</tr>
-
-<tr>
-<td>ECEN 5817</td>
-</tr>
-
-<tr>
-<td>MCEN 4085</td>
-</tr>
-
-<tr>
-<td>MCEN 4115</td>
-</tr>
-
-<tr>
-<td>JOUR 4523</td>
-</tr>
-
-<tr>
-<td>LAWS 6280</td>
-</tr>
-
-<tr>
-<td>LAWS 6331</td>
-</tr>
-
-<tr>
-<td>LAWS 7019</td>
-</tr>
-
-<tr>
-<td>LAWS 7201</td>
-</tr>
-
-<tr>
-<td>LAWS 7629</td>
-</tr>
-
-<tr>
-<td>MILR 4082</td>
+<td>LAWS 6119</td>
 </tr>
 
 </table>
