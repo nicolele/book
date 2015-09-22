@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Sun Sep 20 2015 17:54:00 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Mon Sep 21 2015 18:04:45 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -698,65 +804,55 @@
 on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
 the following:</p>
 <h1 id="who-is-not-a-computer-science-major">Who is not a Computer Science major?</h1>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<p><pre><code>var comments = _.pluck(data.comments, &apos;body&apos;)
 
-<span class="keyword">var</span> csComments = _.reject(comments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;computer science&quot;</span>) || _.includes(n.toLowerCase(), <span class="string">&quot;cs&quot;</span>)
+var csComments = _.reject(comments, function(n) {
+    return _.includes(n.toLowerCase(), &quot;computer science&quot;) || _.includes(n.toLowerCase(), &quot;cs&quot;)
 });
 
-<span class="keyword">return</span> _.map(csComments, <span class="keyword">function</span>(comment) {
-    <span class="keyword">var</span> names = comment.split(<span class="string">&apos;\r\n&apos;</span>)[<span class="number">0</span>]
-    <span class="keyword">return</span> names.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
-});
-</pre></p>
+return _.map(csComments, function(comment) {
+    var names = comment.split(&apos;\r\n&apos;)[0]
+    return names.split(&apos;:&apos;)[1]
+});</code></pre></p>
 <p> John Cronk, Sushant Mittal, Sanketh S Shetty, Brian McKean,Kari Santos are all not Computer Science majors.</p>
 <h1 id="how-many-people-responded-before-the-first-day-of-class-august-24th">How many people responded before the first day of class (August 24th)?</h1>
-<p><pre>
-<span class="keyword">var</span> dates = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<p><pre><code>var dates = _.pluck(data.comments, &apos;created_at&apos;)
 
-<span class="keyword">var</span> commitTimes = _.map(dates, <span class="keyword">function</span>(n) {
-    <span class="keyword">var</span> date = n.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>]
-    <span class="keyword">return</span> date.split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
+var commitTimes = _.map(dates, function(n) {
+    var date = n.split(&apos;T&apos;)[0]
+    return date.split(&apos;-&apos;)[2]
 });
 
-<span class="keyword">return</span> (_.filter(commitTimes, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> n&lt;<span class="number">24</span>
-})).length
-
-</pre></p>
+return (_.filter(commitTimes, function(n) {
+    return n<24 })).length<="" code=""></24></code></pre></p>
 <p>5 people responded before the first class.</p>
 <h1 id="how-many-people-are-applied-math-majors">How many people are Applied Math majors?</h1>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<p><pre><code>var comments = _.pluck(data.comments, &apos;body&apos;)
 
-<span class="keyword">var</span> appm = _.filter(comments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;applied math&quot;</span>) || _.includes(n.toLowerCase(), <span class="string">&quot;appm&quot;</span>)
+var appm = _.filter(comments, function(n) {
+    return _.includes(n.toLowerCase(), &quot;applied math&quot;) || _.includes(n.toLowerCase(), &quot;appm&quot;)
 });
 
-<span class="keyword">return</span> _.map(appm, <span class="keyword">function</span>(comment) {
-    <span class="keyword">var</span> names = comment.split(<span class="string">&apos;\r\n&apos;</span>)[<span class="number">0</span>]
-    <span class="keyword">return</span> names.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
-});
-</pre></p>
+return _.map(appm, function(comment) {
+    var names = comment.split(&apos;\r\n&apos;)[0]
+    return names.split(&apos;:&apos;)[1]
+});</code></pre></p>
 <p> William Farmer, Denis Kazakov, Nicole Woytarowicz are Applied Math majors.</p>
 <h1 id="how-many-people-responded-after-class-began-on-the-24th">How many people responded after class began on the 24th?</h1>
-<p><pre>
-<span class="keyword">var</span> dates = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<p><pre><code>var dates = _.pluck(data.comments, &apos;created_at&apos;)
 
-<span class="keyword">var</span> dateFilter = _.filter(dates, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;2015-08-24&quot;</span>)
+var dateFilter = _.filter(dates, function(n) {
+    return _.includes(n, &quot;2015-08-24&quot;)
 });
 
-<span class="keyword">var</span> commitTimes = _.map(dateFilter, <span class="keyword">function</span>(n) {
-    <span class="keyword">var</span> date = n.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>]
-    <span class="keyword">return</span> date.split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
+var commitTimes = _.map(dateFilter, function(n) {
+    var date = n.split(&apos;T&apos;)[1]
+    return date.split(&apos;:&apos;)[0]
 });
 
-<span class="keyword">return</span> (_.filter(commitTimes, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> n&gt;<span class="number">16</span>
-})).length 
-</pre></p>
+return (_.filter(commitTimes, function(n) {
+    return n&gt;16
+})).length</code></pre></p>
 <p>13 people responded after the beginning of the first class.</p>
 
                     
@@ -778,6 +874,14 @@ the following:</p>
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
