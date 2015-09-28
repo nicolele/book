@@ -22,7 +22,7 @@ function computeHeight(d, i) {
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return d.pop/4645946
 }
 
 function computeY(d, i) {
