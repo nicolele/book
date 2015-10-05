@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Fri Oct 02 2015 17:16:49 GMT-0600 (MDT)">
+    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Sun Oct 04 2015 18:14:30 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -1103,16 +1103,16 @@ you want.</p>
 <p>Now it&apos;s your turn to answer the following questions using the real data.</p>
 <h2 id="how-many-issues-have-been-created-to-date-in-our-class-s-forum-repository">How many issues have been created to date in our class&apos;s forum repository?</h2>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues</div></div></p>
-<p>Total of 24 was created.</p>
+<p>Total of 25 was created.</p>
 <h3 id="what-are-the-titles-of-these-issues">What are the titles of these issues?</h3>
 <p><pre><code>// add lodash code to process the data and generate the answer
 return _.pluck(data, &quot;title&quot;)</code></pre></p>
-<p>Titles are Question about using Mongo DB for the android app project,Trouble getting mongodb  data,adding axes to SVG charts,Week 6 team homework is released,serving gitbook&apos;s specific pages,Viz drills are posted,Questions for the Birdstrike Hackathon,Corrupt file in .git,Converting JSON to Tableau ready (on OSX),Week 4 Learning Challenge ,Your FCQ question,Everyone&apos;s book,This week&apos;s challenge and next week&apos;s hackathon,Week 3 Learning Challenge Updated / Posted,Tableau,lodash variables,Week 2 Learning Challenge Updated / Posted,Week 2 Team Learning Clarification,Knowing Your Classmates Hackathon,Problems uploading book to github.io,Hackathons,First Learning Challenge (Update),Learning challenges,Introduction.</p>
+<p>Titles are All of my gitbook work is missing ,Question about using Mongo DB for the android app project,Trouble getting mongodb  data,adding axes to SVG charts,Week 6 team homework is released,serving gitbook&apos;s specific pages,Viz drills are posted,Questions for the Birdstrike Hackathon,Corrupt file in .git,Converting JSON to Tableau ready (on OSX),Week 4 Learning Challenge ,Your FCQ question,Everyone&apos;s book,This week&apos;s challenge and next week&apos;s hackathon,Week 3 Learning Challenge Updated / Posted,Tableau,lodash variables,Week 2 Learning Challenge Updated / Posted,Week 2 Team Learning Clarification,Knowing Your Classmates Hackathon,Problems uploading book to github.io,Hackathons,First Learning Challenge (Update),Learning challenges,Introduction.</p>
 <h3 id="how-many-repository-have-been-created-to-date-for-our-class">How many repository have been created to date for our class?</h3>
 <p>Our class&apos;s Github organization is <a href="https://github.com/bigdatahci2015/" target="_blank">bigdatahci2015</a>.</p>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/orgs/bigdatahci2015/repos</div></div></p>
 <p><pre><code>return data</code></pre></p>
-<p>We have 5 repositories in our class. </p>
+<p>We have 6 repositories in our class. </p>
 <h3 id="what-are-the-fork-counts-of-our-class-s-repositories">What are the fork counts of our class&apos;s repositories?</h3>
 <p><pre><code>var results = _.map(data, function(repo) {
 return {repository: repo.name, count: repo.forks_count}
@@ -1139,6 +1139,10 @@ return results</code></pre></p>
  {
   &quot;repository&quot;: &quot;gitbook-plugin-bigdata&quot;,
   &quot;count&quot;: 2
+ },
+ {
+  &quot;repository&quot;: &quot;book2&quot;,
+  &quot;count&quot;: 0
  }
 ]</pre></p>
 <h3 id="how-many-public-repositories-does-the-user-doubleshow-have">How many public repositories does the user <code>doubleshow</code> have?</h3>
